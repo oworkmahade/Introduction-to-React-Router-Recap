@@ -1,14 +1,23 @@
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import {
+  useLoaderData,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 
 const UserDetails = () => {
+  // access route loader data
   const user = useLoaderData();
 
   const { id, name, username, email, phone, website, address, company } = user;
-
+  // programmatic navigation
   const navigate = useNavigate();
-
+  // read dynamic url parameters
   const { userId } = useParams();
   console.log(userId);
+  // get current url/location info
+  const location = useLocation();
+  console.log(location);
 
   const handleGoBack = () => {
     navigate(-1);
