@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 const UserDetails = () => {
   const user = useLoaderData();
@@ -6,6 +6,9 @@ const UserDetails = () => {
   const { id, name, username, email, phone, website, address, company } = user;
 
   const navigate = useNavigate();
+
+  const { userId } = useParams();
+  console.log(userId);
 
   const handleGoBack = () => {
     navigate(-1);
